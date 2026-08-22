@@ -89,10 +89,10 @@ async def fetch_api_2(num: str) -> dict:
 # === CLEAN MINIMAL AESTHETIC FORMATTER ===
 def format_single_response(data: dict, title: str) -> str:
     if not data: 
-        return f"<b>✦ {title} ✦</b>\n\n<i>No records found in database.</i> ⚠️"
+        return f"<b>✦ {title} </b>\n\n<i>No records found in database.</i> ⚠️"
     
     json_str = json.dumps(data, indent=4, ensure_ascii=False)
-    header = f"<b>✦ {title} ✦</b>\n\n"
+    header = f"<b>{title} </b>\n\n"
     code_block = f"<pre><code class=\"language-Info\">\n{json_str}\n</code></pre>"
     
     return f"{header}{code_block}"
@@ -103,7 +103,7 @@ def format_dual_response(data1: dict, data2: dict) -> str:
         "Server_2_Result": data2 if data2 else "No record found"
     }
     json_str = json.dumps(combined, indent=4, ensure_ascii=False)
-    header = "<b>✦ DUAL SERVER RECORD (COMBINED) ✦</b>\n\n"
+    header = "<b>✦ DUAL SERVER RECORD (COMBINED)</b>\n\n"
     code_block = f"<pre><code class=\"language-Info\">\n{json_str}\n</code></pre>"
     return f"{header}{code_block}"
 
