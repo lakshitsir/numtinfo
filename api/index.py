@@ -149,10 +149,10 @@ async def num_cmd(m: types.Message):
     
     msg = await m.reply("<i>Executing hybrid search...</i> ⚡")
     data = await fetch_api_1(num)
-    title = "HYBRID RECORD (SERVER 1)"
+    title = "DATABASE RECORD / 1"
     if not data:
         data = await fetch_api_2(num)
-        title = "HYBRID RECORD (SERVER 2)"
+        title = "DATABASE RECORD / 2"
         
     await msg.edit_text(format_single_response(data, title))
 
